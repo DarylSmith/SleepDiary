@@ -1,0 +1,20 @@
+
+    <div *ngIf="storage.sleepEntry.length>0" class="current Entries">
+      <div class="listing-container">
+
+              <div *ngFor="let entry of storage.sleepEntry" class="card">
+                <div class="card-block">
+                  <h4 class="card-title">{{entry.EntryDate}}</h4>
+                  <h6 class="card-subtitle text-muted">Time To Sleep : {{entry.TimeToSleep}}</h6>
+                  <h6 class="card-subtitle text-muted">Time To Wake : {{entry.TimeUpForTheDay}}</h6>
+                  <a href="/entry/{{entry.EntryDate}}">Edit</a>
+                </div>
+              </div>
+
+       
+      </div>
+    </div>
+    <h3  *ngIf="storage.sleepEntry.length===0" >No entries yet</h3>
+
+    <h2><a href="/entry">...Add New Diary Entry</a></h2>
+
