@@ -6,17 +6,17 @@ export class SleepEntry {
 
     TimeToSleep:string;
 
-    MinutesBeforeSleeping: number;
+    MinutesBeforeSleeping: number= 0;
 
     TotalAwakenings: number;
 
-    TotalLengthOfAwakenings: number;
+    TotalLengthOfAwakenings: number= 0;
 
-    MinutesAfterWakeup: number;
+    MinutesAfterWakeup: number=0;
 
     WakeUpEarlier:string;
 
-    MinutesUpEarlier: number;
+    MinutesUpEarlier: number= 0;
 
     TimeUpForTheDay: string;
 
@@ -24,9 +24,9 @@ export class SleepEntry {
 
     RestLevel: string;
 
-    NumberOfNaps : number;
+    NumberOfNaps : number= 0;
 
-    TotalNapTime:number;
+    TotalNapTime:number= 0;
 
     NumberOfDrinks: number;
 
@@ -39,6 +39,10 @@ export class SleepEntry {
     Medication:string;
 
     ListOfMedications: string;
+
+    TotalTimeInBed: number;
+
+    TotalTimeAsleep: number;
 
     Comments: string;
 

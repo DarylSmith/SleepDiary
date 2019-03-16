@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SleepEntryFormComponent } from './sleep-entry-form/sleep-entry-form.component';
 import { EntryComponent } from './entry/entry.component';
+import { SleepReportComponent } from './sleep-report/sleep-report.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'entry/:date',
     component:SleepEntryFormComponent 
+  },
+  {
+    path:'report',
+    component:SleepReportComponent 
   },
   { path: '',
   redirectTo: '/listing',

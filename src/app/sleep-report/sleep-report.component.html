@@ -1,0 +1,160 @@
+<h2 *ngIf="storage.sleepEntry.length===0">
+  Nothing to report.</h2>
+
+<div class="report-summary" *ngIf="storage.sleepEntry.length>0">
+  <h2>Report Summary</h2>
+  <table class="table table-striped">
+
+    <tbody>
+      <tr>
+        <td scope="col">Date</td>
+        <td scope="col">Hours in Bed</td>
+        <td scope="col">Hours Asleep</td>
+      </tr>
+      <tr *ngFor="let entry of storage.sleepEntry">
+
+        <td scope="col">{{entry.EntryDate}}</td>
+        <td scope="col"> {{entry.TotalTimeInBed}}</td>
+        <td scope="col"> {{entry.TotalTimeAsleep}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h5>Average Hours in Bed: {{getHoursInBedAverage()}} </h5>
+  <h5>Average Hours Asleep: {{getHoursAsleepAverage()}} </h5>
+</div>
+
+<div class="report-summary" *ngIf="storage.sleepEntry.length>0">
+  <h2>Report Details</h2>
+
+
+  <table *ngFor="let entry of storage.sleepEntry" class="table table-striped">
+<thead>
+    <tr>
+
+      <th scope="col date-row" colspan="2">{{entry.EntryDate}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td scope="col">Time I went to bed</td>
+      <td scope="col"> {{entry.TimeToBed}}</td>
+    </tr>
+    <tr>
+
+      <td scope="col">Time I tried to sleep</td>
+      <td scope="col"> {{entry.TimeToSleep}}</td>
+    </tr>
+
+    <tr>
+
+      <td scope="col">Minutes to fall asleep</td>
+      <td scope="col"> {{entry.MinutesBeforeSleeping}}</td>
+    </tr>
+
+    <tr>
+
+      <td scope="col">Number of times I work up</td>
+      <td scope="col"> {{entry.TotalAwakenings}}</td>
+    </tr>
+
+    <tr>
+
+      <td scope="col">Number of minutes awakenings lasted</td>
+      <td scope="col"> {{entry.TotalLengthOfAwakenings}}</td>
+    </tr>
+    <tr>
+
+      <td scope="col">Number of minutes in bed after final awakening</td>
+      <td scope="col"> {{entry.MinutesAfterWakeup}}</td>
+    </tr>
+    <tr>
+
+      <td scope="col">Did I wake up earlier than planned</td>
+      <td scope="col"> {{entry.WakeUpEarlier}}</td>
+    </tr>
+
+    <tr>
+
+      <td scope="col">How much earlier?</td>
+      <td scope="col"> {{entry.MinutesUpEarlier}}</td>
+    </tr>
+
+
+    <tr>
+
+      <td scope="col">The time I got up for the day</td>
+      <td scope="col"> {{entry.TimeUpForTheDay}}</td>
+    </tr>
+
+
+    <tr>
+
+      <td scope="col">Quality of my sleep</td>
+      <td scope="col"> {{entry.QualityOfSleep}}</td>
+    </tr>
+
+    <tr>
+
+      <td scope="col">Today I felt</td>
+      <td scope="col"> {{entry.RestLevel}}</td>
+    </tr>
+
+
+    <tr>
+
+      <td scope="col">Number of naps I took</td>
+      <td scope="col"> {{entry.NumberOfNaps}}</td>
+    </tr>
+    <tr>
+
+      <td scope="col">Number of minutes I spent napping</td>
+      <td scope="col"> {{entry.TotalNapTimes}}</td>
+    </tr>
+    <tr>
+
+      <td scope="col">Number of alcoholic drinks I had</td>
+      <td scope="col"> {{entry.NumberOfDrinks}}</td>
+    </tr>
+    <tr>
+
+      <td scope="col">The time of my last drink</td>
+      <td scope="col"> {{entry.TimeOfLastDrink}}</td>
+    </tr>
+    <tr>
+
+      <td scope="col">Number of caffeinated drinks I had</td>
+      <td scope="col"> {{entry.NumberOfCafDrinks}}</td>
+    </tr>
+
+    <tr>
+
+      <td scope="col">Time of my last caffeinated drink</td>
+      <td scope="col"> {{entry.TimeOfLastCafDrink}}</td>
+    </tr>
+
+    <tr>
+
+        <td scope="col">Did I use any sleep medication?</td>
+        <td scope="col"> {{entry.Medication}}</td>
+      </tr>
+
+
+      <tr>
+
+          <td scope="col">List of medication I used</td>
+          <td scope="col"> {{entry.ListOfMedications}}</td>
+        </tr>
+        
+      <tr>
+
+          <td scope="col">Comments</td>
+          <td scope="col"> {{entry.Comments}}</td>
+        </tr>
+      </tbody>
+  </table>
+
+</div>

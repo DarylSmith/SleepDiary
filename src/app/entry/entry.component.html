@@ -5,8 +5,8 @@
               <div *ngFor="let entry of storage.sleepEntry" class="card">
                 <div class="card-block">
                   <h4 class="card-title">{{entry.EntryDate}}</h4>
-                  <h6 class="card-subtitle text-muted">Time To Sleep : {{entry.TimeToSleep}}</h6>
-                  <h6 class="card-subtitle text-muted">Time To Wake : {{entry.TimeUpForTheDay}}</h6>
+                  <h6 class="card-subtitle text-muted">Time In Bed : {{entry.TotalTimeInBed}} hours</h6>
+                  <h6 class="card-subtitle text-muted">Time Asleep : {{entry.TotalTimeAsleep}} hours</h6>
                   <a href="/entry/{{entry.EntryDate}}">Edit</a>
                 </div>
               </div>
@@ -17,4 +17,10 @@
     <h3  *ngIf="storage.sleepEntry.length===0" >No entries yet</h3>
 
     <h2><a href="/entry">...Add New Diary Entry</a></h2>
+
+    <div  *ngIf="storage.sleepEntry.length > 0" class="button-container">
+
+        <button type="submit" (click)=" this.router.navigate(['/report']);"  class="btn">Generate Report</button>
+        <button type="submit" (click)="storage.clearAllEntries()"  class="btn">Clear All Entries</button>
+    </div>
 

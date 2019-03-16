@@ -24,8 +24,22 @@ export class StorageService {
 
    }
 
+   public clearAllEntries():void{
+    
+    this.sleepEntry=[];
+    localStorage.setItem(this.storageName,JSON.stringify(this.sleepEntry));
+  
+   }
+
 
   public  SaveData(data:SleepEntry): void {
+
+    //check if item is there with that date. if it is, let's replace
+    var item = this.sleepEntry.find(e=> e.EntryDate === data.EntryDate);
+    if(item)
+    {
+      this.sleepEntry = this.sleepEntry.filter(e => e.EntryDate !==  data.EntryDate);
+    }
 
     this.sleepEntry.push(data);
 

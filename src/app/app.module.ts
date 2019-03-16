@@ -11,13 +11,15 @@ import { EntryComponent } from './entry/entry.component';
 import { SleepEntryFormComponent } from './sleep-entry-form/sleep-entry-form.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { StorageService } from './storage-service.service';
+import { SleepReportComponent } from './sleep-report/sleep-report.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EntryComponent,  
-    SleepEntryFormComponent,
+    SleepEntryFormComponent, 
+    SleepReportComponent
 
   ],
   imports: [

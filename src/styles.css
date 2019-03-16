@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
+h5{font-weight:600}
 .container{ width:800px}
 
 app-sleep-entry-form {text-align:left}
 
-.listing-container{display:flex}
+.listing-container{display:flex; flex-wrap:wrap}
+
+.report-summary{margin-left:50px;width:1000px; text-align:left;}
 
 .card-block{
     border: 1px solid #707070;
