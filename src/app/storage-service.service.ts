@@ -26,9 +26,19 @@ export class StorageService {
 
    public clearAllEntries():void{
     
+    if(confirm('This will remove all entries. Proceed?'))
+    {
     this.sleepEntry=[];
     localStorage.setItem(this.storageName,JSON.stringify(this.sleepEntry));
+    }
   
+   }
+
+   public RemoveData(data:SleepEntry):void{
+
+    this.sleepEntry = this.sleepEntry.filter(e => e.EntryDate !==  data.EntryDate);
+    localStorage.setItem(this.storageName,JSON.stringify(this.sleepEntry));
+
    }
 
 

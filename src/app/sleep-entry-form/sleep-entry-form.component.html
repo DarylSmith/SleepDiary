@@ -1,6 +1,7 @@
 <div class="container">
   <h1 *ngIf="selectedDate === undefined">Add a new Entry</h1>
   <h1 *ngIf="selectedDate !== undefined">Edit entry for {{selectedDate}}</h1>
+  <h6 class="card-subtitle text-muted">Use the format h:mm (eg 11:00 or 6:30) for all time fields</h6>
   <form>
 
     <div class="form-group">
@@ -16,38 +17,38 @@
 
     <div class="form-group">
       <label> What time did you try to go to sleep?</label>
-      <input type="text" [(ngModel)]="entry.TimeToSleep" placeholder="11:15" class="form-control" name="input3" id="alterEgo">
+      <input type="text" [(ngModel)]="entry.TimeToSleep" placeholder="11:15" class="form-control" name="input3" required>
     </div>
 
     <div class="form-group">
       <label> How many minutes did it take you to fall asleep?</label>
-      <input type="text" [(ngModel)]="entry.MinutesBeforeSleeping"  placeholder="15" class="form-control" name="input4" id="alterEgo">
+      <input type="text" [(ngModel)]="entry.MinutesBeforeSleeping"  placeholder="15" class="form-control" name="input4"  required>
     </div>
 
     <div class="form-group">
       <label> How many times did you wake up, not counting your final awakening?</label>
-      <input type="text" [(ngModel)]="entry.TotalAwakenings" class="form-control" placeholder="1" name="input5" id="alterEgo">
+      <input type="text" [(ngModel)]="entry.TotalAwakenings" class="form-control" placeholder="1" name="input5"  required>
     </div>
 
     <div class="form-group">
         <label> In total, how many minutes did your awakenings last?</label>
-        <input type="text" [(ngModel)]="entry.TotalLengthOfAwakenings" class="form-control" placeholder="1" name="input5" id="alterEgo">
+        <input type="text" [(ngModel)]="entry.TotalLengthOfAwakenings" class="form-control" placeholder="1" name="input5" >
       </div>
 
     <div class="form-group">
       <label> After your final awakening, how many minutes did you spend in bed trying to sleep?</label>
-      <input type="text" [(ngModel)]="entry.MinutesAfterWakeup" class="form-control" placeholder="15" name="input6" id="alterEgo">
+      <input type="text" [(ngModel)]="entry.MinutesAfterWakeup" class="form-control" placeholder="15" name="input6"  required>
     </div>
 
     <div class="form-group">
         <label>What was the time of your final awakening ?</label>
-        <input type="text" [(ngModel)]="entry.TimeOfFinalAwakening" placeholder="6:30" class="form-control" name="input29" id="alterEgo">
+        <input type="text" [(ngModel)]="entry.TimeOfFinalAwakening" placeholder="6:30" class="form-control" name="input29"  required>
       </div>
 
 
     <div class="form-group">
       <label> Did you wake up earlier than planned?</label>
-      <select type="text" [(ngModel)]="entry.WakeUpEarlier" class="form-control" name="input8" id="alterEgo">
+      <select type="text" [(ngModel)]="entry.WakeUpEarlier" class="form-control" name="input8" >
         <option value="no">No</option>
         <option value="yes">Yes</option>
       </select>
@@ -60,18 +61,18 @@
 
     <div class="form-group">
       <label>What time did you get up for the day?</label>
-      <input type="text" [(ngModel)]="entry.TimeUpForTheDay" placeholder="6:30" class="form-control" name="input10" id="alterEgo">
+      <input type="text" [(ngModel)]="entry.TimeUpForTheDay" placeholder="6:30" class="form-control" name="input10"  required>
     </div>
 
       
 
       <div class="form-group">
           <label>How would you rate the quality of your sleep?</label>
-          <select type="text" [(ngModel)]="entry.QualityOfSleep" class="form-control" name="input13" id="alterEgo">
+          <select type="text" [(ngModel)]="entry.QualityOfSleep" class="form-control" name="input13">
               <option value="Poor">Poor</option>
               <option value="Fair">Fair</option>
               <option value="Good">Good</option>
-              <option value="Very Good">Very</option>
+              <option value="Very Good">Very Good</option>
             </select>
         </div>
 
@@ -79,8 +80,8 @@
         
       <div class="form-group">
           <label>How rested or refreshed did you feel when you woke up for the day?</label>
-          <select type="text" [(ngModel)]="entry.RestLevel" class="form-control" name="input14" id="alterEgo">
-              <option value="Not at all reste">Not at all rested</option>
+          <select type="text" [(ngModel)]="entry.RestLevel" class="form-control" name="input14" >
+              <option value="Not at all rested">Not at all rested</option>
               <option value="Slightly Rested">Slightly Rested</option>
               <option value="Somewhat Rested">Somewhat Rested</option>
               <option value="Well-Rested">Well-Rested</option>
@@ -90,42 +91,42 @@
 
         <div class="form-group">
             <label>How many naps did you take</label>
-            <input type="text" [(ngModel)]="entry.NumberOfNaps" class="form-control" name="input15" id="alterEgo">
+            <input type="text" [(ngModel)]="entry.NumberOfNaps" class="form-control" name="input15">
           </div>
 
           <div *ngIf="entry.NumberOfNaps !==0" class="form-group">
               <label>In total, how long did you nap or doze?</label>
-              <input type="text" [(ngModel)]="entry.TotalNapTimes" class="form-control" name="input16" id="alterEgo">
+              <input type="text" [(ngModel)]="entry.TotalNapTimes" class="form-control" name="input16" >
             </div>
 
             <div class="form-group">
                 <label>How many alcoholic drinks did you have?</label>
-                <input type="text" [(ngModel)]="entry.NumberOfDrinks" class="form-control" name="input17" id="alterEgo">
+                <input type="text" [(ngModel)]="entry.NumberOfDrinks" class="form-control" name="input17" required>
               </div>
 
 
               
             <div *ngIf="entry.NumberOfDrinks !==0" class="form-group">
                 <label>What was the time of your last drink?</label>
-                <input type="text" [(ngModel)]="entry.TimeOfLastDrink" class="form-control" name="input18" id="alterEgo">
+                <input type="text" [(ngModel)]="entry.TimeOfLastDrink" class="form-control" name="input18" >
               </div>
 
                 
             <div class="form-group">
                 <label>How many caffeinated drinks did you have?</label>
-                <input type="text" [(ngModel)]="entry.NumberOfCafDrinks" class="form-control" name="input19" id="alterEgo">
+                <input type="text" [(ngModel)]="entry.NumberOfCafDrinks" class="form-control" name="input19" required>
               </div>
 
               <div *ngIf="entry.NumberOfCafDrinks !==0" class="form-group">
                   <label>What was the time of your last caffeinated drink?</label>
-                  <input type="text" [(ngModel)]="entry.TimeOfLastCafDrink" class="form-control" name="input20" id="alterEgo">
+                  <input type="text" [(ngModel)]="entry.TimeOfLastCafDrink" class="form-control" name="input20" >
                 </div>
 
 
                 
               <div class="form-group">
                   <label>Do you take any over  the counter or prescription medication to help you sleep?</label>
-                      <select type="text" [(ngModel)]="entry.Medication" class="form-control" name="input21" id="alterEgo">
+                      <select type="text" [(ngModel)]="entry.Medication" class="form-control" name="input21"  required>
                       <option value="no">No</option>
                       <option value="yes">Yes</option>
                     </select>
@@ -133,8 +134,8 @@
 
                    
               <div class="form-group" *ngIf="entry.Medication !=='no'" >
-                  <label>If so, please list the medication-- indicate the does and time taken</label>
-                  <input type="text" [(ngModel)]="entry.ListOfMedications" class="form-control" name="input22" id="alterEgo">
+                  <label>If so, please list the medication-- indicate the dosage and time taken</label>
+                  <input type="text" [(ngModel)]="entry.ListOfMedications" class="form-control" name="input22" >
                 </div>
 
 

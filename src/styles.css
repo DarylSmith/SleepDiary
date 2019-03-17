@@ -8,6 +8,8 @@ app-sleep-entry-form {text-align:left}
 
 .listing-container{display:flex; flex-wrap:wrap}
 
+.link-btn{margin-left:10px;}
+
 .report-summary{margin-left:50px;width:1000px; text-align:left;}
 
 .card-block{
@@ -21,3 +23,11 @@ app-sleep-entry-form {text-align:left}
 -moz-box-shadow: 10px 10px 18px 0px rgba(112,112,112,1);
 box-shadow: 10px 10px 18px 0px rgba(112,112,112,1);
 }
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }

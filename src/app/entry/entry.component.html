@@ -2,25 +2,26 @@
     <div *ngIf="storage.sleepEntry.length>0" class="current Entries">
       <div class="listing-container">
 
-              <div *ngFor="let entry of storage.sleepEntry" class="card">
+              <div *ngFor="let entry of storage.sleepEntry | orderBy:'EntryDate'" class="card">
                 <div class="card-block">
                   <h4 class="card-title">{{entry.EntryDate}}</h4>
                   <h6 class="card-subtitle text-muted">Time In Bed : {{entry.TotalTimeInBed}} hours</h6>
                   <h6 class="card-subtitle text-muted">Time Asleep : {{entry.TotalTimeAsleep}} hours</h6>
-                  <a href="/entry/{{entry.EntryDate}}">Edit</a>
+                  <a class="link-btn"  href="javascript:void(0);" (click)="router.navigate(['/entry',entry.EntryDate])">Edit</a>
+                  <a class="link-btn" href="javascript:void(0);" (click)="removeEntry(entry.EntryDate)">Delete</a>
                 </div>
               </div>
 
        
       </div>
     </div>
-    <h3  *ngIf="storage.sleepEntry.length===0" >No entries yet</h3>
+    <h3  *ngIf="storage.sleepEntry.length===0" >No entries yet</h3> 
 
-    <h2><a href="/entry">...Add New Diary Entry</a></h2>
+    <h2><a href="javascript:void(0);" (click)="router.navigate(['/entry'])">...Add New Diary Entry</a></h2>
 
     <div  *ngIf="storage.sleepEntry.length > 0" class="button-container">
 
-        <button type="submit" (click)="storeEntry()"  class="btn">Generate Report</button>
+        <button type="submit" (click)="router.navigate(['/report'])"  class="btn">Generate Report</button>
         <button type="submit" (click)="storage.clearAllEntries()"  class="btn">Clear All Entries</button>
     </div>
 
