@@ -624,10 +624,13 @@ var SleepEntryFormComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SleepEntry; });
 var SleepEntry = /** @class */ (function () {
     function SleepEntry() {
+        this.TimeToBed = '11:00';
+        this.TimeToSleep = '11:30';
         this.MinutesBeforeSleeping = 0;
         this.TotalLengthOfAwakenings = 0;
         this.MinutesAfterWakeup = 0;
         this.MinutesUpEarlier = 0;
+        this.TimeUpForTheDay = '11:30';
         this.NumberOfNaps = 0;
         this.TotalNapTime = 0;
         this.NumberOfNaps = 0;
