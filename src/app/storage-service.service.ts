@@ -43,6 +43,8 @@ export class StorageService {
 
     this.sleepEntry.push(data);
 
+    this.sleepEntry = this.sleepEntry.filter(e => e.EntryDate);
+
     localStorage.setItem(this.storageName,JSON.stringify(this.sleepEntry));
     
 

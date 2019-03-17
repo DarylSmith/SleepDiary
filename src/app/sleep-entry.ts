@@ -2,9 +2,9 @@ export class SleepEntry {
 
     EntryDate:string;
 
-    TimeToBed:string;
+    TimeToBed:string ='11:00';
 
-    TimeToSleep:string;
+    TimeToSleep:string ='11:30';
 
     MinutesBeforeSleeping: number= 0;
 
@@ -18,7 +18,9 @@ export class SleepEntry {
 
     MinutesUpEarlier: number= 0;
 
-    TimeUpForTheDay: string;
+    TimeOfFinalAwakening:string ='6:00';
+
+    TimeUpForTheDay: string ='6:30';
 
     QualityOfSleep: string;
 

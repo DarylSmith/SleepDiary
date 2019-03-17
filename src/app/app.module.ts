@@ -12,6 +12,7 @@ import { SleepEntryFormComponent } from './sleep-entry-form/sleep-entry-form.com
 import { AppRoutingModule } from './/app-routing.module';
 import { StorageService } from './storage-service.service';
 import { SleepReportComponent } from './sleep-report/sleep-report.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SleepReportComponent } from './sleep-report/sleep-report.component';
     BrowserModule, 
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OrderModule
   
   ],
   providers: [StorageService],

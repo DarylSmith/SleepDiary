@@ -11,7 +11,7 @@
         <td scope="col">Hours in Bed</td>
         <td scope="col">Hours Asleep</td>
       </tr>
-      <tr *ngFor="let entry of storage.sleepEntry">
+      <tr *ngFor="let entry of storage.sleepEntry | orderBy:'EntryDate'">
 
         <td scope="col">{{entry.EntryDate}}</td>
         <td scope="col"> {{entry.TotalTimeInBed}}</td>
@@ -30,7 +30,7 @@
   <h2>Report Details</h2>
 
 
-  <table *ngFor="let entry of storage.sleepEntry" class="table table-striped">
+  <table *ngFor="let entry of storage.sleepEntry  | orderBy:'EntryDate'" class="table table-striped">
 <thead>
     <tr>
 

@@ -50,10 +50,26 @@ export class SleepEntryFormComponent implements OnInit {
 
 
 
-    TimeToBed =TimeToBed.add(12,'hour');
+
     TimeOutOfBed =TimeOutOfBed.add(1,'day');
-    TimeAsleep = TimeAsleep.add(12,'hour');
     TimeAwake = TimeAwake.add(1,'day');
+
+   if (parseInt(TimeAsleep.format("H")) >5 )
+   {
+    TimeAsleep = TimeAsleep.add(12,'hour');
+   }
+   else
+   {
+    TimeAsleep = TimeAsleep.add(1,'day');
+   }
+   
+   if (parseInt(TimeToBed.format("H")) >5 )
+   {
+    TimeToBed =TimeToBed.add(12,'hour');
+   }
+   else{
+    TimeToBed =TimeToBed.add(1,'day');
+   }
 
     this.entry.TotalTimeInBed=  moment.duration(moment(TimeOutOfBed, 'YYYY/MM/DD HH:mm')
     .diff(moment(TimeToBed, 'YYYY/MM/DD HH:mm'))

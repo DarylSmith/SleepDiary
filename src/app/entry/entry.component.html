@@ -20,7 +20,7 @@
 
     <div  *ngIf="storage.sleepEntry.length > 0" class="button-container">
 
-        <button type="submit" (click)=" this.router.navigate(['/report']);"  class="btn">Generate Report</button>
+        <button type="submit" (click)="storeEntry()"  class="btn">Generate Report</button>
         <button type="submit" (click)="storage.clearAllEntries()"  class="btn">Clear All Entries</button>
     </div>
 
