@@ -31,7 +31,7 @@ export class SleepEntry {
     TotalNapTime:number= 0;
 
     NumberOfDrinks: number;
-
+0
     TimeOfLastDrink: string;
 
     NumberOfCafDrinks:number;
@@ -45,6 +45,11 @@ export class SleepEntry {
     TotalTimeInBed: number;
 
     TotalTimeAsleep: number;
+    
+    TimeInBedFormatted : string;
+
+    TimeAsleepFormatted: string;
+
 
     Comments: string;
 

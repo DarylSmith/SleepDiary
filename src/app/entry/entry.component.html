@@ -5,8 +5,8 @@
               <div *ngFor="let entry of storage.sleepEntry | orderBy:'EntryDate'" class="card">
                 <div class="card-block">
                   <h4 class="card-title">{{entry.EntryDate}}</h4>
-                  <h6 class="card-subtitle text-muted">Time In Bed : {{entry.TotalTimeInBed}} hours</h6>
-                  <h6 class="card-subtitle text-muted">Time Asleep : {{entry.TotalTimeAsleep}} hours</h6>
+                  <h6 class="card-subtitle text-muted">Time In Bed : {{entry.TimeInBedFormatted}} </h6>
+                  <h6 class="card-subtitle text-muted">Time Asleep : {{entry.TimeAsleepFormatted}} </h6>
                   <a class="link-btn"  href="javascript:void(0);" (click)="router.navigate(['/entry',entry.EntryDate])">Edit</a>
                   <a class="link-btn" href="javascript:void(0);" (click)="removeEntry(entry.EntryDate)">Delete</a>
                 </div>

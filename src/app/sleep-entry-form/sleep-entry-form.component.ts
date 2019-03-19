@@ -45,8 +45,8 @@ export class SleepEntryFormComponent implements OnInit {
     .add(this.entry.TotalLengthOfAwakenings,'m')
     .add(this.entry.MinutesAfterWakeup,'m');
 
-    var TimeAwake = moment(this.entry.EntryDate+' '+this.entry.TimeUpForTheDay)
-    .add(this.entry.TotalNapTime);
+    var TimeAwake = moment(this.entry.EntryDate+' '+this.entry.TimeOfFinalAwakening)
+    .add(this.entry.TotalNapTime,'m');
 
 
 
@@ -68,17 +68,21 @@ export class SleepEntryFormComponent implements OnInit {
     TimeToBed =TimeToBed.add(12,'hour');
    }
    else{
-    TimeToBed =TimeToBed.add(1,'day');
+    TimeAsleep = TimeAsleep.add(1,'day');
    }
 
     this.entry.TotalTimeInBed=  moment.duration(moment(TimeOutOfBed, 'YYYY/MM/DD HH:mm')
     .diff(moment(TimeToBed, 'YYYY/MM/DD HH:mm'))
-    ).asHours();
+    ).asMinutes();
 
     
     this.entry.TotalTimeAsleep=  moment.duration(moment(TimeAwake, 'YYYY/MM/DD HH:mm')
     .diff(moment(TimeAsleep, 'YYYY/MM/DD HH:mm'))
-    ).asHours();
+    ).asMinutes();
+
+    this.entry.TimeInBedFormatted =   `${Math.floor(this.entry.TotalTimeInBed/60) }h ${this.entry.TotalTimeInBed % 60 }m`;
+
+    this.entry.TimeAsleepFormatted=   `${Math.floor(this.entry.TotalTimeAsleep/60) }h ${this.entry.TotalTimeAsleep % 60 }m`;
 
 
 

@@ -13,10 +13,10 @@ export class EntryComponent implements OnInit {
   constructor(private storage:StorageService, private router:Router) { 
   }
 
-  removeEntry(entry:SleepEntry){
+  removeEntry(entryDate:string){
     if(confirm('Are you sure you want to remove?'))
     {
-      this.storage.RemoveData(entry);
+      this.storage.RemoveData(entryDate);
     }
   }
 

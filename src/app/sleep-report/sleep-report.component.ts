@@ -20,21 +20,25 @@ export class SleepReportComponent implements OnInit {
 
   }
 
-  public getHoursAsleepAverage():number {
-    const totalHoursAsleep = this.storage.sleepEntry.reduce(function(prev, cur) {
+  public getHoursAsleepAverage():string {
+    const totalMinutesAsleep = this.storage.sleepEntry.reduce(function(prev, cur) {
       return prev + cur.TotalTimeAsleep
     }, 0);
 
-    return totalHoursAsleep/this.storage.sleepEntry.length;
+    const bedAvg =   totalMinutesAsleep/this.storage.sleepEntry.length;
+
+      return  `${Math.floor(bedAvg/60) }h ${  Math.floor(bedAvg % 60) }m`;
   }
 
-  public getHoursInBedAverage(): number {
+  public getHoursInBedAverage(): string {
 
-    const totalHoursinBed = this.storage.sleepEntry.reduce(function(prev, cur) {
+    const totalMinutesInBed = this.storage.sleepEntry.reduce(function(prev, cur) {
       return prev + cur.TotalTimeInBed
     }, 0);
 
-    return  totalHoursinBed/this.storage.sleepEntry.length;
+    const bedAvg =  totalMinutesInBed /this.storage.sleepEntry.length;
+
+    return  `${Math.floor(bedAvg/60) }h ${  Math.floor(bedAvg % 60) }m`;
 
 
   }

@@ -34,9 +34,9 @@ export class StorageService {
   
    }
 
-   public RemoveData(data:SleepEntry):void{
+   public RemoveData(entryDate:string):void{
 
-    this.sleepEntry = this.sleepEntry.filter(e => e.EntryDate !==  data.EntryDate);
+    this.sleepEntry = this.sleepEntry.filter(e => e.EntryDate !==  entryDate);
     localStorage.setItem(this.storageName,JSON.stringify(this.sleepEntry));
 
    }

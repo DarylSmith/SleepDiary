@@ -8,14 +8,14 @@
     <tbody>
       <tr>
         <td scope="col">Date</td>
-        <td scope="col">Hours in Bed</td>
         <td scope="col">Hours Asleep</td>
+        <td scope="col">Hours In Bed</td>
       </tr>
       <tr *ngFor="let entry of storage.sleepEntry | orderBy:'EntryDate'">
 
         <td scope="col">{{entry.EntryDate}}</td>
-        <td scope="col"> {{entry.TotalTimeInBed}}</td>
-        <td scope="col"> {{entry.TotalTimeAsleep}}</td>
+        <td scope="col"> {{entry.TimeAsleepFormatted}}</td>
+        <td scope="col"> {{entry.TimeInBedFormatted}}</td>
 
       </tr>
 
@@ -55,11 +55,7 @@
       <td scope="col"> {{entry.MinutesBeforeSleeping}}</td>
     </tr>
 
-    <tr>
 
-      <td scope="col">Number of times I work up</td>
-      <td scope="col"> {{entry.TotalAwakenings}}</td>
-    </tr>
 
     <tr>
 
@@ -67,6 +63,12 @@
       <td scope="col"> {{entry.TotalLengthOfAwakenings}}</td>
     </tr>
     <tr>
+        <tr>
+
+            <td scope="col">Time I woke up</td>
+            <td scope="col"> {{entry.TimeOfFinalAwakening}}</td>
+          </tr>
+          <tr>
 
       <td scope="col">Number of minutes in bed after final awakening</td>
       <td scope="col"> {{entry.MinutesAfterWakeup}}</td>
